@@ -1,0 +1,27 @@
+{
+  "name": "post-quotes-node-cron",
+  "version": "1.0.0",
+  "description": "Post quotes from API to Slack",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coder-amogh/quotes-to-slack.git"
+  },
+  "author": "Amogh Datar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/coder-amogh/quotes-to-slack/issues"
+  },
+  "homepage": "https://github.com/coder-amogh/quotes-to-slack#readme",
+  "dependencies": {
+    "@slack/web-api": "^6.3.0",
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "node-cron": "^3.0.0",
+    "node-fetch": "^2.6.1",
+    "unsplash-js": "^7.0.15"
+  }
+}
