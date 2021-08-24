@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const { SLACK_URL, SLACK_TOKEN, SLACK_CHANNEL_ID, UNSPLASH_ACCESS_KEY } = process.env;
+const { SLACK_TOKEN, SLACK_CHANNEL_ID, UNSPLASH_ACCESS_KEY } = process.env;
 
 const getGenreQuote = (genre = "technology") => {
 	return new Promise((resolve, reject) => {
@@ -19,6 +19,7 @@ const http = require("http");
 const axios = require("axios");
 const nodeFetch = require("node-fetch");
 
+// https://www.npmjs.com/package/unsplash-js#adding-polyfills
 global.fetch = nodeFetch;
 
 const cron = require('node-cron');
@@ -67,7 +68,7 @@ const main = () => {
 			// NEVER USE SUCH HACKY WAYS IN PRODUCTION!
 			setTimeout(() => {
 				web.files.upload({
-					token: SLACK_TOKEN,
+					token: SLACK_TOKEN, // unsure if needed or not
 					channels: SLACK_CHANNEL_ID,
 					title: author,
 					initial_comment: quote,
